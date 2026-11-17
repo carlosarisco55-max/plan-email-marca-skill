@@ -1,0 +1,165 @@
+{
+ "marca": "The North Face",
+ "semanas": 16,
+ "emails_programados": 50,
+ "perfiles": [
+  {
+   "k": "A",
+   "nombre": "Alpinista técnico",
+   "pct": 0.12,
+   "programa_de": "A",
+   "audiencia": 12000.0,
+   "recibe": 10800,
+   "programados": 16,
+   "picos": 0,
+   "imp_programados": 172800,
+   "imp_triggers": 6360.0,
+   "imp_total": 179160.0,
+   "emails_por_persona": 16.53
+  },
+  {
+   "k": "B",
+   "nombre": "Excursionista de fin de semana",
+   "pct": 0.36,
+   "programa_de": "B",
+   "audiencia": 36000.0,
+   "recibe": 32400,
+   "programados": 18,
+   "picos": 2,
+   "imp_programados": 583200,
+   "imp_triggers": 18720.0,
+   "imp_total": 601920.0,
+   "emails_por_persona": 18.52
+  },
+  {
+   "k": "C",
+   "nombre": "Urbanita icono",
+   "pct": 0.32,
+   "programa_de": "C",
+   "audiencia": 32000.0,
+   "recibe": 28800,
+   "programados": 18,
+   "picos": 2,
+   "imp_programados": 518400,
+   "imp_triggers": 15360.0,
+   "imp_total": 533760.0,
+   "emails_por_persona": 18.48
+  },
+  {
+   "k": "S",
+   "nombre": "Sin perfil (sin compra o mixto)",
+   "pct": 0.2,
+   "programa_de": "B",
+   "audiencia": 20000.0,
+   "recibe": 18000,
+   "programados": 18,
+   "picos": 2,
+   "imp_programados": 324000,
+   "imp_triggers": 10400.0,
+   "imp_total": 334400.0,
+   "emails_por_persona": 18.52
+  }
+ ],
+ "bienvenida": {
+  "altas": 4000,
+  "emails": 3,
+  "impactos": 12000
+ },
+ "impactos": {
+  "programados": 1598400,
+  "triggers": 62840.0,
+  "total": 1661240.0
+ },
+ "piezas": {
+  "unicos": 49,
+  "variantes": 4,
+  "comunes": 1,
+  "plantillas": 13,
+  "total": 67
+ },
+ "tests": [
+  [
+   2,
+   "A",
+   "Asunto técnico vs emocional"
+  ],
+  [
+   4,
+   "C",
+   "Asunto icono vs precio"
+  ],
+  [
+   5,
+   "B",
+   "Guía (rutas + capas) vs ficha del mismo producto"
+  ],
+  [
+   6,
+   "C",
+   "1ª línea: 'Tu color del 60 aniversario' (quien elige) vs 'Talla segura: cambio de talla gratis' (quien regala)"
+  ]
+ ],
+ "meses": [
+  [
+   "NOV · sem 1-4",
+   1,
+   4
+  ],
+  [
+   "DIC · sem 5-9",
+   5,
+   9
+  ],
+  [
+   "ENE · sem 10-13",
+   10,
+   13
+  ],
+  [
+   "FEB · sem 14-16",
+   14,
+   16
+  ]
+ ],
+ "por_tipo": {
+  "A": {
+   "Oferta": 1,
+   "Inspiracional": 3,
+   "Producto": 3,
+   "Fidelización": 4,
+   "Contenido": 5
+  },
+  "B": {
+   "Oferta": 7,
+   "Inspiracional": 5,
+   "Producto": 1,
+   "Fidelización": 1,
+   "Contenido": 4
+  },
+  "C": {
+   "Oferta": 6,
+   "Inspiracional": 3,
+   "Producto": 7,
+   "Fidelización": 1,
+   "Contenido": 1
+  }
+ },
+ "celdas": {
+  "impactos_total": "Impactos!F10",
+  "impactos_programados": "Impactos!D10",
+  "piezas_total": "Piezas!E9",
+  "piezas_check": "Piezas!E18",
+  "suma_pct": "Supuestos!C12",
+  "programados_A": "Matriz_Semanal!D21",
+  "programados_B": "Matriz_Semanal!E21",
+  "programados_C": "Matriz_Semanal!F21",
+  "imp_total_A": "Impactos!F5",
+  "imp_total_B": "Impactos!F6",
+  "imp_total_C": "Impactos!F7",
+  "imp_total_S": "Impactos!F8",
+  "emails_pp_A": "Impactos!B13",
+  "emails_pp_B": "Impactos!B14",
+  "emails_pp_C": "Impactos!B15",
+  "emails_pp_S": "Impactos!B16"
+ }
+}

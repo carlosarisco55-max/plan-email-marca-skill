@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  motor:
+    name: Motor (cifras, validación, importador y deck)
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+
+      - name: Setup Python
+        uses: actions/setup-python@0b93645e9fea7318ecaed2b359559ac225c90a2b # v5.3.0
+        with:
+          python-version: "3.12"
+
+      - name: Setup Node
+        uses: actions/setup-node@39370e3970a6d050c480ffad4ff0ed4d3fdee5af # v4.1.0
+        with:
+          node-version: "20"
+
+      - name: Dependencias
+        run: |
+          pip install openpyxl==3.1.5
+          cd motor && npm ci --ignore-scripts
+
+      - name: Tests (sin LibreOffice se omite la comparación con el Excel recalculado)
+        run: python motor/test_motor.py
+
+      - name: Los tres ejemplos generan Excel y deck
+        run: |
+          for f in ejemplos/*.json; do
+            python motor/generar.py "$f" /tmp/out
+            node motor/deck.js "$f" /tmp/out/cifras.json "/tmp/out/$(basename "$f" .json).pptx"
+          done
+          ls -la /tmp/out

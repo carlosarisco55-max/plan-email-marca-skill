@@ -1,0 +1,661 @@
+{
+ "marca": "Rodalia Bikes",
+ "mercado": "España",
+ "slug": "RODALIA",
+ "contexto": "Marca ficticia · ejercicio de clase · plan de comunicación solo por email",
+ "inicio": "2027-03-01",
+ "semanas": 10,
+ "supuestos": {
+  "base": 40000,
+  "control": 0.1,
+  "tope_semanal": 2,
+  "nuevos": 1600
+ },
+ "perfiles": [
+  {
+   "k": "C",
+   "nombre": "Ciclista de carretera exigente",
+   "corto": "Carretera",
+   "pct": 0.15,
+   "max_ofertas": 0,
+   "tarjeta": {
+    "territorio": "Gama alta",
+    "decide": "Decide, paga y usa él mismo",
+    "barrera": "«Si está rebajado, será de outlet o de la temporada pasada»",
+    "atributo": "Producto nuevo de temporada, a precio completo",
+    "no": "Descuentos, outlet ni «chollos»",
+    "titular": "Temporada 2027: componentes nuevos en tienda"
+   },
+   "refutacion": "Si la ficha técnica gana a «temporada 2027», la barrera no es el outlet y el perfil se reescribe."
+  },
+  {
+   "k": "U",
+   "nombre": "Commuter urbano",
+   "corto": "Commuter",
+   "pct": 0.3,
+   "tarjeta": {
+    "territorio": "Bici al trabajo",
+    "decide": "Decide y usa él mismo, cada día laborable",
+    "barrera": "«Llegaré sudado, me la robarán o me pillará la lluvia»",
+    "atributo": "Llegar a tiempo, seco y sin sudar",
+    "no": "Rendimiento deportivo ni rutas épicas",
+    "titular": "Llega al trabajo sin sudar y sin buscar aparcamiento"
+   },
+   "refutacion": "Si U no abre ni clica más en la semana del cambio de hora que en el resto, la luz no es su momento."
+  },
+  {
+   "k": "F",
+   "nombre": "Familia que sale el domingo",
+   "corto": "Familia",
+   "pct": 0.25,
+   "tarjeta": {
+    "territorio": "Infantil y cascos",
+    "decide": "Deciden y pagan los padres; usa el niño",
+    "barrera": "«En un año se le queda pequeña» · «¿el casco le queda bien?»",
+    "atributo": "La talla correcta y un plan para el domingo",
+    "no": "Fichas técnicas y componentes",
+    "titular": "Qué talla de bici necesita tu hijo"
+   },
+   "refutacion": "Si «que le valga el año que viene» no gana, la barrera de la familia no es el crecimiento."
+  },
+  {
+   "k": "R",
+   "nombre": "Regalador de Día de la Madre",
+   "corto": "Regalador",
+   "pct": 0.1,
+   "tarjeta": {
+    "territorio": "Solo regala",
+    "decide": "Decide y paga quien regala; usa la madre",
+    "barrera": "«No sé su talla ni qué le va a gustar: ¿y si no acierto?»",
+    "atributo": "Acertar y que llegue antes del domingo",
+    "no": "Jerga técnica y fichas de componentes",
+    "titular": "Para el Día de la Madre: acierta aunque no sepas su talla"
+   },
+   "refutacion": "Si R no compra más que su parte del control en el Día de la Madre, es un comprador ocasional, no un regalador."
+  }
+ ],
+ "sin_perfil": {
+  "nombre": "Sin perfil (sin compra o sin familia clara)",
+  "pct": 0.2,
+  "recibe": "U"
+ },
+ "tipos": [
+  {
+   "tipo": "Oferta",
+   "que": "Precio o envío con condiciones y fecha de fin real",
+   "variables": "Urgencia verdadera; condiciones claras; excluir a quien ya compró",
+   "kpi": "Conversión",
+   "uso": "Commuter antes de Semana Santa; familia en Semana Santa y mayo; regalador en el Día de la Madre",
+   "cuando_no": "Nunca al ciclista de carretera: desconfía del producto rebajado",
+   "ejemplo": "Día de la Madre: envío gratis si pides antes del miércoles 28",
+   "deck_que": "Precio o envío con fecha de fin",
+   "deck_variable": "Urgencia cierta; nunca al ciclista de carretera"
+  },
+  {
+   "tipo": "Inspiracional",
+   "que": "Personas y momentos en bici, no la compra",
+   "variables": "Historia real; imagen; sin precio",
+   "kpi": "Engagement (clic, tiempo de lectura)",
+   "uso": "Cambio de hora (U), Semana Santa (F), email de marca del 7-abr (Todos)",
+   "cuando_no": "Pegado a una oferta o en la semana pico del regalador",
+   "ejemplo": "Esta semana vuelves a casa de día",
+   "deck_que": "Personas y momentos en bici",
+   "deck_variable": "Historia e imagen, sin precio"
+  },
+  {
+   "tipo": "Producto",
+   "que": "Novedad o familia de producto con el atributo que pide el perfil",
+   "variables": "Un solo atributo por perfil; ninguna cifra técnica sin ficha",
+   "kpi": "Clic a ficha y conversión",
+   "uso": "Componentes nuevos (C), e-bike y candados (U), cascos y portabicis (F), regalo (R)",
+   "cuando_no": "Con jerga técnica al regalador o a la familia",
+   "ejemplo": "Temporada 2027: componentes nuevos en tienda",
+   "deck_que": "Novedad con el atributo del perfil",
+   "deck_variable": "Temporada (C) · sin sudar (U) · talla (F) · acierto (R)"
+  },
+  {
+   "tipo": "Fidelización",
+   "que": "Ventajas de ser cliente, sin descuento",
+   "variables": "Un beneficio por email; nada que suene a rebaja",
+   "kpi": "Recompra y uso del beneficio",
+   "uso": "Preventa al ciclista de carretera, ajuste en tienda a la familia, ruta compartida del commuter",
+   "cuando_no": "Si el beneficio no existe en las 3 tiendas",
+   "ejemplo": "Reserva antes que nadie: preventa de ruedas y grupos para clientes",
+   "deck_que": "Ventajas de ser cliente, sin rebaja",
+   "deck_variable": "Un beneficio por email"
+  },
+  {
+   "tipo": "Trigger",
+   "que": "Se dispara por lo que hace el cliente",
+   "variables": "Timing; una sola CTA; solo a quien tiene el producto",
+   "kpi": "Conversión por disparo",
+   "uso": "Bienvenida, carrito, reposición de consumibles, siguiente talla infantil, post-regalo",
+   "cuando_no": "Sin tope de frecuencia o a quien no tiene el producto",
+   "ejemplo": "Tu hijo ha crecido: la siguiente talla",
+   "deck_que": "Se dispara por lo que hace el cliente",
+   "deck_variable": "Bienvenida, carrito, reposición, siguiente talla, post-regalo"
+  },
+  {
+   "tipo": "Contenido",
+   "que": "Utilidad: elegir talla, poner a punto, ir al trabajo, rutas con niños",
+   "variables": "Utilidad real; el producto como solución, no como protagonista",
+   "kpi": "Clic a guía",
+   "uso": "Todos los perfiles; es la base del commuter y de la familia",
+   "cuando_no": "En la semana de oferta del regalador",
+   "ejemplo": "Lluvia de abril: cómo ir en bici al trabajo y llegar seco",
+   "deck_que": "Utilidad: talla, puesta a punto, trayecto",
+   "deck_variable": "El producto como solución"
+  }
+ ],
+ "eventos": [
+  "Sin evento comercial · arranque de temporada de primavera",
+  "Sin evento comercial",
+  "Día del Padre vie 19-mar · Domingo de Ramos 21-mar",
+  "Semana Santa: Jueves Santo 25-mar, Viernes Santo 26-mar, Pascua dom 28-mar · cambio de hora dom 28-mar",
+  "Lunes de Pascua 29-mar (festivo solo en algunas CCAA) · primera semana con horario de verano",
+  "Día Mundial de la Salud mié 7-abr",
+  "Sin evento comercial",
+  "Día de la Tierra jue 22-abr",
+  "Día del Trabajo sáb 1-may (festivo nacional) · Día de la Madre dom 2-may",
+  "Semana posterior al Día de la Madre · cierre del periodo dom 9-may"
+ ],
+ "calendario": [
+  [
+   1,
+   "C",
+   "Producto",
+   "Mar",
+   "Temporada 2027: componentes nuevos en tienda",
+   "Clic a ficha",
+   "1ª línea: «Recién llegado, temporada 2027» vs «Ficha técnica completa frente al modelo anterior»"
+  ],
+  [
+   1,
+   "U",
+   "Contenido",
+   "Lun",
+   "La ruta al trabajo que evita las cuestas: cómo planificarla",
+   "Clic a guía",
+   ""
+  ],
+  [
+   1,
+   "F",
+   "Contenido",
+   "Vie",
+   "Qué talla de bici necesita tu hijo",
+   "Clic a guía",
+   ""
+  ],
+  [
+   2,
+   "C",
+   "Contenido",
+   "Jue",
+   "Antes de la primera marcha: cómo revisar tu transmisión",
+   "Clic a guía",
+   ""
+  ],
+  [
+   2,
+   "U",
+   "Producto",
+   "Mar",
+   "Llega al trabajo sin sudar y sin buscar aparcamiento",
+   "Clic a ficha e-bike",
+   ""
+  ],
+  [
+   2,
+   "F",
+   "Producto",
+   "Jue",
+   "Cascos infantiles de temporada: los que se ajustan con una rueda",
+   "Clic a ficha",
+   ""
+  ],
+  [
+   3,
+   "C",
+   "Fidelización",
+   "Mié",
+   "Reserva antes que nadie: preventa de ruedas y grupos para clientes",
+   "Reservas",
+   ""
+  ],
+  [
+   3,
+   "U",
+   "Oferta",
+   "Jue",
+   "Antes de Semana Santa: envío gratis en candados y luces hasta el domingo 21",
+   "Conversión",
+   ""
+  ],
+  [
+   3,
+   "F",
+   "Oferta",
+   "Mar",
+   "Bicis infantiles con envío gratis hasta el domingo 21",
+   "Conversión",
+   "1ª línea: «Que le valga también el año que viene» vs «Lista para estrenar en Semana Santa»"
+  ],
+  [
+   3,
+   "F",
+   "Contenido",
+   "Vie",
+   "Cómo elegir una vía verde para ir con niños en Semana Santa",
+   "Clic a guía",
+   ""
+  ],
+  [
+   3,
+   "R",
+   "Producto",
+   "Mar",
+   "Día del Padre, viernes 19: regalos de ciclismo que aciertan sin saber de bicis",
+   "Clic a guía de regalo",
+   ""
+  ],
+  [
+   4,
+   "C",
+   "Contenido",
+   "Lun",
+   "Semana Santa con kilómetros: cómo dosificar tres días seguidos de salida larga",
+   "Clic a guía",
+   ""
+  ],
+  [
+   4,
+   "U",
+   "Contenido",
+   "Lun",
+   "Del coche a la bici después de Semana Santa: plan para tu primera semana",
+   "Clic a guía",
+   ""
+  ],
+  [
+   4,
+   "F",
+   "Inspiracional",
+   "Jue",
+   "Vacaciones en bici: la foto de Semana Santa que más nos enviáis",
+   "Engagement",
+   ""
+  ],
+  [
+   5,
+   "C",
+   "Producto",
+   "Mar",
+   "Ruedas nuevas de temporada: qué cambia frente al modelo de 2026",
+   "Clic a ficha",
+   ""
+  ],
+  [
+   5,
+   "U",
+   "Inspiracional",
+   "Mar",
+   "Esta semana vuelves a casa de día",
+   "Engagement",
+   "1ª línea: «Una hora más de luz para volver en bici» vs «Llega al trabajo sin sudar»"
+  ],
+  [
+   5,
+   "F",
+   "Contenido",
+   "Vie",
+   "Adiós a los ruedines: cómo enseñarle en una tarde de domingo",
+   "Clic a guía",
+   ""
+  ],
+  [
+   5,
+   "R",
+   "Inspiracional",
+   "Mié",
+   "Volver a pedalear: madres que estrenaron bici el año pasado",
+   "Engagement",
+   ""
+  ],
+  [
+   6,
+   "Todos",
+   "Inspiracional",
+   "Mié",
+   "Día Mundial de la Salud: por qué vamos en bici, contado por cuatro clientes",
+   "Engagement de marca",
+   ""
+  ],
+  [
+   7,
+   "C",
+   "Inspiracional",
+   "Jue",
+   "El sábado a las 7: por qué salimos antes de que amanezca",
+   "Engagement",
+   ""
+  ],
+  [
+   7,
+   "U",
+   "Producto",
+   "Mié",
+   "Candados y aparcamiento: que tu bici siga ahí a las seis de la tarde",
+   "Clic a ficha",
+   ""
+  ],
+  [
+   7,
+   "F",
+   "Producto",
+   "Jue",
+   "Portabicis y sillitas: el equipo para salir el domingo con los cuatro",
+   "Clic a ficha",
+   ""
+  ],
+  [
+   7,
+   "R",
+   "Contenido",
+   "Jue",
+   "Cómo acertar con la talla de una bici sin preguntarle",
+   "Clic a guía",
+   ""
+  ],
+  [
+   8,
+   "C",
+   "Contenido",
+   "Mié",
+   "Cubiertas de carretera: cómo elegir sección y presión según tu peso",
+   "Clic a guía",
+   ""
+  ],
+  [
+   8,
+   "U",
+   "Contenido",
+   "Jue",
+   "Día de la Tierra: calcula qué cambia en tu mes si dejas el coche dos días por semana",
+   "Clic a calculadora",
+   ""
+  ],
+  [
+   8,
+   "F",
+   "Fidelización",
+   "Vie",
+   "Ajuste de casco y sillín gratis en cualquiera de nuestras 3 tiendas",
+   "Visitas a tienda",
+   ""
+  ],
+  [
+   8,
+   "R",
+   "Producto",
+   "Mar",
+   "Para el Día de la Madre: acierta aunque no sepas su talla",
+   "Clic a guía de regalo",
+   "1ª línea: «Acierta aunque no sepas su talla» (quien paga) vs «Para que salga contigo los domingos» (quien la usa)"
+  ],
+  [
+   8,
+   "R",
+   "Contenido",
+   "Vie",
+   "Guía de regalo por presupuesto: casco, luces, cesta o e-bike",
+   "Clic a guía",
+   ""
+  ],
+  [
+   9,
+   "C",
+   "Producto",
+   "Mar",
+   "Pedales y zapatillas: las novedades de 2027 en el punto de contacto",
+   "Clic a ficha",
+   ""
+  ],
+  [
+   9,
+   "U",
+   "Contenido",
+   "Mar",
+   "Lluvia de abril: cómo ir en bici al trabajo y llegar seco",
+   "Clic a guía",
+   ""
+  ],
+  [
+   9,
+   "F",
+   "Contenido",
+   "Jue",
+   "Domingo 2 de mayo: el plan del Día de la Madre es una ruta en familia",
+   "Clic a guía",
+   ""
+  ],
+  [
+   9,
+   "R",
+   "Oferta",
+   "Lun",
+   "Día de la Madre: envío gratis si pides antes del miércoles 28",
+   "Conversión (sin quien ya compró)",
+   ""
+  ],
+  [
+   9,
+   "R",
+   "Producto",
+   "Jue",
+   "¿Se te ha hecho tarde? Tarjeta regalo digital, al momento",
+   "Conversión (sin quien ya compró)",
+   ""
+  ],
+  [
+   10,
+   "C",
+   "Fidelización",
+   "Jue",
+   "Gracias por tu temporada: acceso anticipado a lo que llega en junio",
+   "Reservas",
+   ""
+  ],
+  [
+   10,
+   "U",
+   "Fidelización",
+   "Mié",
+   "¿Cuál es tu ruta al trabajo? Compártela y la añadimos al mapa de tu tienda",
+   "Rutas compartidas",
+   ""
+  ],
+  [
+   10,
+   "F",
+   "Oferta",
+   "Mié",
+   "Cascos infantiles: envío gratis hasta el domingo 9",
+   "Conversión (sin quien ya compró casco)",
+   ""
+  ]
+ ],
+ "triggers": [
+  {
+   "nombre": "Bienvenida (asigna perfil por el clic)",
+   "perfiles": "Nuevos",
+   "tasa": 0,
+   "emails": 2,
+   "plantillas": 1
+  },
+  {
+   "nombre": "Carrito abandonado (sin código de descuento en la plantilla de C)",
+   "perfiles": "C,U,F,R",
+   "tasa": 0.08,
+   "emails": 2,
+   "plantillas": 4,
+   "tope": true
+  },
+  {
+   "nombre": "Reposición de consumibles (solo a quien compró cadena, cubiertas o pastillas)",
+   "perfiles": "C,U",
+   "tasa": 0.15,
+   "emails": 1,
+   "plantillas": 2
+  },
+  {
+   "nombre": "Siguiente talla (solo a quien compró bici infantil hace 2 años o más)",
+   "perfiles": "F",
+   "tasa": 0.12,
+   "emails": 1,
+   "plantillas": 1
+  },
+  {
+   "nombre": "Post-regalo: ¿y para ti? (solo a quien compró en el Día de la Madre)",
+   "perfiles": "R",
+   "tasa": 0.25,
+   "emails": 1,
+   "plantillas": 1
+  }
+ ],
+ "textos": {
+  "fuente_supuestos": "Marca ficticia del enunciado: base y reparto los da el profesor; altas nuevas, control y tasas de trigger son supuestos propios",
+  "nota_reparto": "Reparto dado por el enunciado (supuesto de clase). 'Sin perfil' recibe el programa del commuter, el más amplio y de utilidad diaria; la bienvenida le asigna perfil por el clic. Familias de producto exclusivas por SKU: componentes y cascos de carretera = C; urbana, e-bike, candados y luces = U; bici y casco infantil = F. R se define por la fecha de compra y tiene prioridad: R > C > F > U.",
+  "tipos_intro": "Seis tipos de clase. El error caro aquí es mandar un descuento al ciclista de carretera: para él, rebajado significa outlet.",
+  "reglas_calendario": "Un email por perfil y semana; dos en los picos (familia en la previa de Semana Santa, regalador en las dos semanas del Día de la Madre). El regalador no recibe nada en las semanas 1, 2, 4 y 10 a propósito: no está en modo compra y no se le quema antes del pico. Control del 10% fuera de los programados.",
+  "lectura_matriz": "El ciclista de carretera recibe 0 ofertas (max_ofertas = 0). El regalador concentra sus emails en las semanas 8 y 9, dos por semana.",
+  "variable_discrimina": "la familia de producto de las compras (componentes de carretera de gama alta / urbana o e-bike / infantil) y haber comprado solo en la semana del Día de la Madre",
+  "resumen_contenidos": "C novedad de temporada y ventajas de cliente, sin ofertas; U utilidad para el trayecto diario; F talla, seguridad y plan de domingo; R acierto y llegada a tiempo, concentrado en el Día de la Madre.",
+  "resumen_eventos": "Día del Padre, Semana Santa y cambio de hora, Día Mundial de la Salud, Día de la Tierra y Día de la Madre (2-may)",
+  "resumen_medicion": "Control del 10%; un test A/B por perfil; corte provisional el 12-abr-2027 y revisión completa el 17-may-2027."
+ },
+ "medicion": [
+  [
+   "Control",
+   "10% apartado antes de segmentar; no recibe los programados. Sí recibe triggers y transaccionales."
+  ],
+  [
+   "Tests A/B",
+   "Sem. 1 C: temporada vs ficha técnica · Sem. 3 F: crecimiento vs Semana Santa · Sem. 5 U: luz vs sin sudar · Sem. 8 R: quien paga vs quien la usa."
+  ],
+  [
+   "Revisión",
+   "Corte provisional el 12-abr-2027 con los tests de las semanas 1, 3 y 5; revisión completa el 17-may-2027 con el del regalador."
+  ]
+ ],
+ "_verificacion": [
+  [
+   "Inicio lun 1-mar-2027 y fin dom 9-may-2027",
+   "datetime de Python (weekday)",
+   "2026-11-18"
+  ],
+  [
+   "Pascua dom 28-mar-2027; Ramos 21, Jueves Santo 25, Viernes Santo 26, Lunes de Pascua 29-mar (festivo autonómico, varía por comunidad)",
+   "dateutil.easter (algoritmo gregoriano)",
+   "2026-11-18"
+  ],
+  [
+   "Día de la Madre en España = primer domingo de mayo = 2-may-2027",
+   "regla del primer domingo de mayo, calculada con datetime",
+   "2026-11-18"
+  ],
+  [
+   "Día del Padre (San José) vie 19-mar-2027",
+   "fecha fija 19-mar, día de la semana con datetime",
+   "2026-11-18"
+  ],
+  [
+   "Cambio de hora dom 28-mar-2027",
+   "regla UE del último domingo de marzo (Directiva 2000/84/CE), calculada; confirmar que sigue vigente en 2027",
+   "2026-11-18"
+  ],
+  [
+   "Día Mundial de la Salud mié 7-abr; Día de la Tierra jue 22-abr; 1-may sáb",
+   "fechas fijas anuales, día de la semana con datetime",
+   "2026-11-18"
+  ],
+  [
+   "Día Mundial de la Bicicleta (ONU) 3-jun-2027: fuera del periodo",
+   "fecha fija 3-jun",
+   "2026-11-18"
+  ],
+  [
+   "Online + 3 tiendas",
+   "enunciado del profesor",
+   "2026-11-18"
+  ],
+  [
+   "Preventa a clientes, ajuste de casco y sillín gratis en tienda, tarjeta regalo digital, envío gratis con fecha de fin",
+   "SUPUESTO de marca ficticia: confirmar con el profesor o quitar",
+   "2026-11-18"
+  ]
+ ],
+ "deck": {
+  "estilo": {
+   "oscuro": "1C2A24",
+   "oscuro2": "263830",
+   "oscuro3": "22322B",
+   "papel": "F4F1EA",
+   "acento": "E2572B",
+   "fuente_titulo": "Bahnschrift SemiBold Condensed",
+   "fuente_texto": "Bahnschrift",
+   "tipos": {
+    "Oferta": "E2572B",
+    "Producto": "F2B544",
+    "Inspiracional": "9FC2B0",
+    "Contenido": "4F8A73",
+    "Fidelización": "B07A4F"
+   }
+  },
+  "pie": "RODALIA BIKES (MARCA FICTICIA) · PLAN DE EMAIL MAR-MAY 2027",
+  "portada": {
+   "titulo": "UNA BICI,\nCUATRO RAZONES",
+   "subtitulo": "Plan de comunicación por email · 10 semanas, del 1-mar al 9-may-2027",
+   "autores": "[Autores]",
+   "montanas": false
+  },
+  "personas_titulo": "Cuatro perfiles, cuatro barreras",
+  "personas_pie": "Variable que discrimina: la familia de producto comprada y comprar solo en el Día de la Madre. El grupo sin perfil recibe el programa de U.",
+  "tipos_lectura": "el ciclista de carretera no recibe ninguna oferta; el regalador concentra sus emails en el Día de la Madre.",
+  "meses": [
+   "Día del Padre 19-mar · Semana Santa y cambio de hora 28-mar",
+   "Salud 7-abr · Tierra 22-abr · previa Día de la Madre",
+   "Día de la Madre dom 2-may · cierre 9-may"
+  ],
+  "momentos_titulo": "Semana Santa para la familia, mayo para el regalador",
+  "momentos": [
+   {
+    "tag": "SEM 3-5 · 15-MAR → 4-ABR",
+    "titulo": "SEMANA SANTA Y CAMBIO DE HORA",
+    "puntos": [
+     "Familia: 2 emails en la previa y test «que le valga el año que viene» vs «para Semana Santa».",
+     "Commuter: el martes 30-mar vuelve a casa de día; test luz vs sin sudar.",
+     "Carretera: kilómetros de vacaciones, ninguna oferta."
+    ]
+   },
+   {
+    "tag": "SEM 8-9 · 19-ABR → 2-MAY",
+    "titulo": "DÍA DE LA MADRE",
+    "puntos": [
+     "Regalador: 2 emails por semana; test entre quien paga y quien la usa.",
+     "Pedido antes del miércoles 28: el sábado 1 es festivo.",
+     "Familia: el domingo 2 es una ruta, no un descuento."
+    ]
+   }
+  ],
+  "momentos_pie": "Marca ficticia: fechas de 2027 calculadas (Pascua 28-mar, Día de la Madre 2-may). Servicios de tienda = supuestos a confirmar.",
+  "numeros_lectura": "Uno por semana; el regalador, solo cerca de sus fechas",
+  "medicion_titulo": "Cada perfil es una hipótesis",
+  "tests_texto": "Un test por perfil, en la 1ª línea: temporada vs ficha (C) · crecimiento vs Semana Santa (F) · luz vs sin sudar (U) · quien paga vs quien la usa (R).",
+  "revision": {
+   "fecha": "17-MAY",
+   "texto": "Corte provisional el 12-abr con tres tests. Si un perfil no supera a su control, se reescribe o se cae."
+  },
+  "cierre": "De cuatro hipótesis, lo normal es que una se caiga. Si caen cero, revisa la medición."
+ }
+}

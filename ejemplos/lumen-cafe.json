@@ -1,0 +1,466 @@
+{
+ "marca": "Lumen Café",
+ "mercado": "España",
+ "slug": "LUMEN",
+ "contexto": "Marca ficticia · ejemplo de prueba de la plantilla (2 perfiles, 12 semanas)",
+ "inicio": "2027-01-11",
+ "semanas": 12,
+ "supuestos": {
+  "base": 20000,
+  "control": 0.1,
+  "tope_semanal": 2,
+  "nuevos": 1500
+ },
+ "perfiles": [
+  {
+   "k": "R",
+   "nombre": "Recurrente de suscripción",
+   "corto": "Recurrente",
+   "pct": 0.55,
+   "max_ofertas": 0,
+   "tarjeta": {
+    "territorio": "Suscripción mensual",
+    "decide": "Decide y bebe él mismo",
+    "barrera": "«¿Y si me canso de recibir siempre lo mismo?»",
+    "atributo": "Descubrir orígenes nuevos sin buscarlos",
+    "no": "Descuentos: ya paga precio completo",
+    "titular": "El origen de febrero: Etiopía lavado"
+   },
+   "refutacion": "Falsa si el grupo que recibe el plan pausa o se da de baja igual que el control."
+  },
+  {
+   "k": "G",
+   "nombre": "Regalador ocasional",
+   "corto": "Regalador",
+   "pct": 0.25,
+   "tarjeta": {
+    "territorio": "Compra en fechas señaladas",
+    "decide": "Decide quien regala; bebe otro",
+    "barrera": "«¿Le gustará y llegará a tiempo?»",
+    "atributo": "Acertar sin saber de café",
+    "no": "Notas de cata y fichas técnicas",
+    "titular": "Packs de San Valentín: listos para regalar"
+   },
+   "refutacion": "Falsa si su compra no se concentra en San Valentín y Día del Padre, o si en el test de la semana 5 ninguna primera línea gana."
+  }
+ ],
+ "sin_perfil": {
+  "nombre": "Sin perfil (sin compra)",
+  "pct": 0.2,
+  "recibe": "R"
+ },
+ "tipos": [
+  {
+   "tipo": "Oferta",
+   "que": "Precio o envío con condiciones y fecha de fin",
+   "variables": "Urgencia real; condiciones claras; excluir a quien ya compró",
+   "kpi": "Conversión",
+   "uso": "Solo al regalador, en San Valentín y Día del Padre",
+   "cuando_no": "Nunca al recurrente: paga precio completo",
+   "ejemplo": "Día del Padre: llega a tiempo si pides hoy",
+   "deck_que": "Precio o envío con fecha de fin",
+   "deck_variable": "Urgencia cierta, solo en las dos fechas de regalo"
+  },
+  {
+   "tipo": "Inspiracional",
+   "que": "La persona y el ritual, no la compra",
+   "variables": "Historia; imagen; sin precio",
+   "kpi": "Engagement",
+   "uso": "Blue Monday, semanas sin evento",
+   "cuando_no": "Pegado a una oferta",
+   "ejemplo": "De la finca a tu taza",
+   "deck_que": "El ritual y las personas",
+   "deck_variable": "Historia, imagen, sin precio"
+  },
+  {
+   "tipo": "Producto",
+   "que": "Origen del mes o pack nuevo",
+   "variables": "El atributo que pide el perfil",
+   "kpi": "Clic a ficha y conversión",
+   "uso": "Origen del mes (R), packs (G)",
+   "cuando_no": "Con notas de cata al regalador",
+   "ejemplo": "El origen de marzo: Colombia honey",
+   "deck_que": "Origen del mes o pack",
+   "deck_variable": "Descubrimiento (R) o acierto (G)"
+  },
+  {
+   "tipo": "Fidelización",
+   "que": "Ventajas de estar suscrito",
+   "variables": "Un beneficio por email",
+   "kpi": "Pausas en vez de bajas",
+   "uso": "Recurrente",
+   "cuando_no": "Si el beneficio es confuso",
+   "ejemplo": "Pausa tu envío en Semana Santa",
+   "deck_que": "Ventajas de estar suscrito",
+   "deck_variable": "Un beneficio por email"
+  },
+  {
+   "tipo": "Trigger",
+   "que": "Se dispara por lo que hace el cliente",
+   "variables": "Timing; una CTA",
+   "kpi": "Conversión por disparo",
+   "uso": "Bienvenida, carrito, valoración, post-regalo",
+   "cuando_no": "Sin tope de frecuencia",
+   "ejemplo": "Valora tu envío y elige el próximo",
+   "deck_que": "Se dispara por lo que hace el cliente",
+   "deck_variable": "Bienvenida, carrito, valoración del envío, post-regalo"
+  },
+  {
+   "tipo": "Contenido",
+   "que": "Utilidad: preparación, molienda, guías de regalo",
+   "variables": "Utilidad real; producto como solución",
+   "kpi": "Clic a guía",
+   "uso": "Ambos perfiles",
+   "cuando_no": "En picos de compra del regalador",
+   "ejemplo": "Cold brew en casa",
+   "deck_que": "Utilidad: preparar y elegir",
+   "deck_variable": "El producto como solución"
+  }
+ ],
+ "eventos": [
+  "Cuesta de enero · propósitos (café en casa)",
+  "Blue Monday lun 18-ene",
+  "Fin de la cuesta de enero",
+  "Previa de San Valentín",
+  "San Valentín dom 14-feb",
+  "Sin evento comercial",
+  "Cierre de febrero",
+  "Previa del Día del Padre",
+  "Previa del Día del Padre",
+  "Día del Padre vie 19-mar · primavera sáb 20-mar",
+  "Semana Santa · Pascua dom 28-mar",
+  "Lunes de Pascua 29-mar"
+ ],
+ "calendario": [
+  [
+   1,
+   "R",
+   "Contenido",
+   "Jue",
+   "Tu café en casa, mejor en 2027: 3 ajustes de molienda",
+   "Clic a guía",
+   ""
+  ],
+  [
+   1,
+   "G",
+   "Inspiracional",
+   "Mar",
+   "Quien recibió tu café en Navidad sigue contándolo",
+   "Engagement",
+   ""
+  ],
+  [
+   2,
+   "R",
+   "Inspiracional",
+   "Lun",
+   "Blue Monday: el ritual de 10 minutos que no te quita nadie",
+   "Engagement",
+   ""
+  ],
+  [
+   3,
+   "R",
+   "Fidelización",
+   "Mié",
+   "Tu 2026 en cafés: los orígenes que has probado",
+   "Valoraciones",
+   ""
+  ],
+  [
+   3,
+   "G",
+   "Contenido",
+   "Jue",
+   "Cómo elegir café para alguien que no conoces",
+   "Clic a guía",
+   ""
+  ],
+  [
+   4,
+   "R",
+   "Producto",
+   "Mar",
+   "El origen de febrero: Etiopía lavado",
+   "Conversión a lote",
+   "Asunto de origen vs asunto de sabor"
+  ],
+  [
+   4,
+   "G",
+   "Producto",
+   "Mar",
+   "Packs de San Valentín: listos para regalar",
+   "Clic a pack",
+   ""
+  ],
+  [
+   5,
+   "R",
+   "Fidelización",
+   "Mié",
+   "Regala un mes de tu suscripción (sin tocar la tuya)",
+   "Suscripciones regaladas",
+   ""
+  ],
+  [
+   5,
+   "G",
+   "Oferta",
+   "Lun",
+   "San Valentín: envío gratis hasta el jueves",
+   "Conversión",
+   ""
+  ],
+  [
+   5,
+   "G",
+   "Oferta",
+   "Jue",
+   "Última llamada: llega antes del domingo",
+   "Conversión",
+   "1ª línea: «Llega a tiempo» vs «Tarjeta regalo digital al momento»"
+  ],
+  [
+   6,
+   "Todos",
+   "Inspiracional",
+   "Mié",
+   "De la finca a tu taza: cómo trabajamos con los productores",
+   "Engagement de marca",
+   ""
+  ],
+  [
+   7,
+   "R",
+   "Contenido",
+   "Jue",
+   "Cold brew en casa: la guía de primavera",
+   "Clic a guía",
+   ""
+  ],
+  [
+   7,
+   "G",
+   "Contenido",
+   "Jue",
+   "Café para quien lo tiene todo: 4 ideas",
+   "Clic a guía",
+   ""
+  ],
+  [
+   8,
+   "R",
+   "Producto",
+   "Mar",
+   "El origen de marzo: Colombia honey",
+   "Conversión a lote",
+   ""
+  ],
+  [
+   8,
+   "G",
+   "Inspiracional",
+   "Mar",
+   "Lo que nos contó un padre sobre su primer espresso",
+   "Engagement",
+   ""
+  ],
+  [
+   9,
+   "R",
+   "Contenido",
+   "Mié",
+   "Agua, temperatura y ratio: la chuleta de tu cafetera",
+   "Clic a guía",
+   ""
+  ],
+  [
+   9,
+   "G",
+   "Producto",
+   "Mié",
+   "Packs Día del Padre",
+   "Clic a pack",
+   ""
+  ],
+  [
+   10,
+   "R",
+   "Fidelización",
+   "Mar",
+   "Valora tu envío de marzo y elige el de abril",
+   "Valoraciones",
+   ""
+  ],
+  [
+   10,
+   "G",
+   "Oferta",
+   "Lun",
+   "Día del Padre: llega a tiempo si pides hoy",
+   "Conversión",
+   ""
+  ],
+  [
+   10,
+   "G",
+   "Oferta",
+   "Jue",
+   "Tarjeta regalo digital: al momento, para el viernes",
+   "Conversión",
+   ""
+  ],
+  [
+   11,
+   "R",
+   "Fidelización",
+   "Lun",
+   "¿Te vas en Semana Santa? Pausa o cambia la dirección del envío",
+   "Pausas en vez de bajas",
+   ""
+  ],
+  [
+   11,
+   "G",
+   "Inspiracional",
+   "Mar",
+   "Anfitriones de Semana Santa: el café de la sobremesa",
+   "Engagement",
+   ""
+  ],
+  [
+   12,
+   "R",
+   "Producto",
+   "Mar",
+   "Llega la primavera: nuevos orígenes de temporada",
+   "Clic a colección",
+   ""
+  ],
+  [
+   12,
+   "G",
+   "Contenido",
+   "Mar",
+   "Café para el picnic: guía rápida",
+   "Clic a guía",
+   ""
+  ]
+ ],
+ "triggers": [
+  {
+   "nombre": "Bienvenida (asigna perfil por el clic)",
+   "perfiles": "Nuevos",
+   "tasa": 0,
+   "emails": 2,
+   "plantillas": 1
+  },
+  {
+   "nombre": "Carrito abandonado",
+   "perfiles": "G",
+   "tasa": 0.1,
+   "emails": 2,
+   "plantillas": 1,
+   "tope": true
+  },
+  {
+   "nombre": "Valoración del envío mensual",
+   "perfiles": "R",
+   "tasa": 1.0,
+   "emails": 3,
+   "plantillas": 1
+  },
+  {
+   "nombre": "Post-regalo: ¿y para ti?",
+   "perfiles": "G",
+   "tasa": 0.3,
+   "emails": 1,
+   "plantillas": 1
+  }
+ ],
+ "textos": {
+  "fuente_supuestos": "Marca ficticia: todos los datos son de prueba",
+  "nota_reparto": "Reparto inventado para probar la plantilla. 'Sin perfil' recibe el programa del recurrente.",
+  "tipos_intro": "Seis tipos de clase. El error caro aquí es mandar descuentos al recurrente, que ya paga precio completo.",
+  "reglas_calendario": "Un email por perfil y semana; dos en San Valentín y Día del Padre para el regalador. El regalador no recibe nada en la semana 2 a propósito. Control del 10% fuera de los programados.",
+  "lectura_matriz": "El recurrente no recibe ninguna oferta; el regalador concentra las suyas en las dos fechas de regalo.",
+  "variable_discrimina": "tener suscripción activa frente a comprar solo en fechas de regalo",
+  "resumen_contenidos": "R descubrimiento y ventajas de suscriptor (sin ofertas); G acierto y llegada a tiempo (ofertas solo en sus dos fechas).",
+  "resumen_eventos": "Blue Monday, San Valentín, Día del Padre y Semana Santa",
+  "resumen_medicion": "Grupo de control apartado antes de segmentar; un test A/B por perfil; revisión el 19-abr-2027."
+ },
+ "medicion": [
+  [
+   "Control",
+   "10% apartado antes de segmentar; no recibe los programados."
+  ],
+  [
+   "Tests A/B",
+   "Asunto de origen vs sabor (R, sem. 4); llegada a tiempo vs tarjeta digital (G, sem. 5)."
+  ]
+ ],
+ "deck": {
+  "estilo": {
+   "oscuro": "2B1D16",
+   "oscuro2": "3A2A21",
+   "oscuro3": "33241C",
+   "papel": "F7F1EA",
+   "acento": "C8692E",
+   "fuente_titulo": "Bahnschrift SemiBold Condensed",
+   "fuente_texto": "Bahnschrift",
+   "tipos": {
+    "Oferta": "C8692E",
+    "Producto": "E2B45A",
+    "Inspiracional": "B9C7A4",
+    "Contenido": "6E8B74",
+    "Fidelización": "8C5A3C"
+   }
+  },
+  "pie": "LUMEN CAFÉ (MARCA FICTICIA) · PRUEBA DE LA PLANTILLA",
+  "portada": {
+   "titulo": "UN MISMO CAFÉ,\nDOS RAZONES",
+   "subtitulo": "Plan de email de prueba · 12 semanas, del 11-ene al 4-abr-2027",
+   "autores": "[Autores]",
+   "montanas": false
+  },
+  "personas_titulo": "Quien se lo bebe y quien lo regala",
+  "personas_pie": "Variable que discrimina: suscripción activa frente a compra solo en fechas de regalo. El 20 % sin perfil recibe el programa de R.",
+  "tipos_lectura": "el recurrente no recibe ofertas; el regalador las concentra en sus dos fechas.",
+  "meses": [
+   "Cuesta de enero · Blue Monday 18-ene",
+   "San Valentín 14-feb",
+   "Día del Padre 19-mar · Semana Santa",
+   "Lunes de Pascua 29-mar · primavera"
+  ],
+  "momentos_titulo": "Dos fechas para el regalador",
+  "momentos": [
+   {
+    "tag": "SEM 4-5 · 1-FEB → 14-FEB",
+    "titulo": "SAN VALENTÍN",
+    "puntos": [
+     "Pack listo para regalar en la sem. 4.",
+     "Test en la primera línea: llegar a tiempo vs tarjeta digital."
+    ]
+   },
+   {
+    "tag": "SEM 9-10 · 8-MAR → 19-MAR",
+    "titulo": "DÍA DEL PADRE",
+    "puntos": [
+     "Gana la versión del test de San Valentín.",
+     "Al recurrente, ninguna oferta: valoración del envío."
+    ]
+   }
+  ],
+  "momentos_pie": "Marca ficticia: fechas de 2027 comprobadas con el calendario (Pascua 28-mar).",
+  "numeros_lectura": "Uno por semana; el recurrente, más la valoración del envío",
+  "medicion_titulo": "Cada perfil es una hipótesis",
+  "tests_texto": "Sem. 4: origen vs sabor (R) · Sem. 5: llegar a tiempo vs tarjeta digital (G).",
+  "revision": {
+   "fecha": "19-ABR",
+   "texto": "Si el recurrente pausa o se da de baja igual con el plan que sin él, el perfil se cae."
+  },
+  "cierre": "Si funcionan las dos hipótesis, revisa cómo se midió."
+ }
+}

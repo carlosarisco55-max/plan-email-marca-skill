@@ -1,0 +1,6 @@
+node_modules/
+__pycache__/
+*.pyc
+salida/
+entrega_*/
+contenido-senior/

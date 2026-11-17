@@ -1,0 +1,8 @@
+{
+  "name": "plan-email-marca-motor",
+  "private": true,
+  "description": "Deck del plan de email (pptxgenjs)",
+  "dependencies": {
+    "pptxgenjs": "3.12.0"
+  }
+}

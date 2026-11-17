@@ -1,0 +1,763 @@
+{
+ "marca": "The North Face",
+ "mercado": "España",
+ "slug": "TNF",
+ "contexto": "Máster de FP en Marketing Digital e IA Generativa · Módulo 9",
+ "inicio": "2026-11-02",
+ "semanas": 16,
+ "supuestos": {
+  "base": 100000,
+  "control": 0.1,
+  "tope_semanal": 2,
+  "nuevos": 4000
+ },
+ "perfiles": [
+  {
+   "k": "A",
+   "nombre": "Alpinista técnico",
+   "corto": "Alpinista",
+   "pct": 0.12,
+   "max_ofertas": 1,
+   "tarjeta": {
+    "territorio": "Mountain Sports",
+    "decide": "Decide y usa él mismo",
+    "barrera": "«¿De verdad aguanta, y si falla me lo cubren?»",
+    "atributo": "Rendimiento técnico verificable",
+    "no": "Descuentos y moda: recibe 1 sola oferta",
+    "titular": "El sistema de capas que llevan nuestros atletas, explicado capa a capa"
+   },
+   "refutacion": "Falsa si en el test de la semana 2 el asunto técnico no supera al emocional, o si en el grupo de control su gasto con descuento supera al gasto a precio completo."
+  },
+  {
+   "k": "B",
+   "nombre": "Excursionista de fin de semana",
+   "corto": "Excursionista",
+   "pct": 0.36,
+   "tarjeta": {
+    "territorio": "Outdoor Active",
+    "decide": "Decide quien organiza la salida",
+    "barrera": "«No sé qué me hace falta ni qué talla pedir»",
+    "atributo": "Estar preparado sin complicarse",
+    "no": "Especificaciones de alpinismo",
+    "titular": "Tu mochila para el puente, resuelta en 3 capas"
+   },
+   "refutacion": "Falsa si en el test de la semana 5 la guía no genera más clics a producto que la ficha, o si su gasto no se concentra en Black Friday y rebajas."
+  },
+  {
+   "k": "C",
+   "nombre": "Urbanita icono",
+   "corto": "Urbanita",
+   "pct": 0.32,
+   "tarjeta": {
+    "territorio": "Urban Exploration",
+    "decide": "Quien lo lleva; en Navidad, quien lo regala",
+    "barrera": "«Es caro… ¿y si no es la talla o el color?»",
+    "atributo": "El icono: color y 60 aniversario",
+    "no": "La ficha técnica",
+    "titular": "The North Face cumple 60 y la Nuptse lo celebra"
+   },
+   "refutacion": "Falsa si en la semana 6 ninguna versión gana entre los compradores de regalo, o si su gasto en rebajas supera al de lanzamientos más diciembre."
+  }
+ ],
+ "sin_perfil": {
+  "nombre": "Sin perfil (sin compra o mixto)",
+  "pct": 0.2,
+  "recibe": "B"
+ },
+ "tipos": [
+  {
+   "tipo": "Oferta",
+   "que": "Precio o descuento con condiciones y fecha de fin",
+   "variables": "% o precio final; urgencia REAL (fecha); condiciones claras; exclusión de quien ya compró; gasto mínimo (infla el ticket)",
+   "kpi": "Conversión e ingreso por envío",
+   "uso": "Black Week, Cyber Monday, Navidad (B y C), rebajas",
+   "cuando_no": "Fuera de los picos, y casi nunca al perfil A: le entrena a esperar descuento",
+   "ejemplo": "Black Friday: la Nuptse, hoy",
+   "deck_que": "Precio con fecha de fin real",
+   "deck_variable": "Urgencia cierta, condiciones claras, excluir a quien ya compró"
+  },
+  {
+   "tipo": "Inspiracional",
+   "que": "Centrado en la persona y la experiencia, no en el producto ni en la compra",
+   "variables": "Imagen protagonista; historia de la comunidad o de atletas; sin precio; CTA suave",
+   "kpi": "Engagement (clic, tiempo)",
+   "uso": "Semanas sin evento comercial; Navidad; año nuevo; Blue Monday",
+   "cuando_no": "Pegado a una oferta: se lee como relleno",
+   "ejemplo": "Never stop exploring: gracias por este año fuera",
+   "deck_que": "La persona y su salida, no la compra",
+   "deck_variable": "Imagen protagonista, historia, sin precio"
+  },
+  {
+   "tipo": "Producto",
+   "que": "Lanzamiento o novedad: beneficio, atributo y ficha",
+   "variables": "Atributo delante según el perfil (técnico, versatilidad o icono); imagen de producto; CTA a la ficha",
+   "kpi": "Clic a ficha y conversión",
+   "uso": "Lanzamientos FW26 (Summit Series, Nuptse 60), esquí, primavera",
+   "cuando_no": "Con el atributo equivocado para el perfil",
+   "ejemplo": "The North Face cumple 60: Summit Nuptse",
+   "deck_que": "Lanzamiento o novedad",
+   "deck_variable": "El atributo que pide el perfil, nunca la ficha completa"
+  },
+  {
+   "tipo": "Fidelización",
+   "que": "Beneficios de pertenecer: XPLR Pass, acceso anticipado, eventos",
+   "variables": "Copy y diseño muy claros; un beneficio por email; reconocimiento antes que descuento. Ojo: el 15% de bienvenida XPLR no aplica a productos rebajados",
+   "kpi": "Altas, logins y recompra",
+   "uso": "Acceso anticipado a Black Friday (desde el 19-nov); balance del año; ventajas de miembro; take-back",
+   "cuando_no": "Cuando el beneficio no existe o es confuso",
+   "ejemplo": "XPLR Pass: entra antes que nadie",
+   "deck_que": "Pertenecer a XPLR Pass",
+   "deck_variable": "Un beneficio por email, diseño limpio"
+  },
+  {
+   "tipo": "Trigger",
+   "que": "Se dispara por el comportamiento del cliente, con una sola llamada a la acción",
+   "variables": "Timing (horas, no días); producto visto o dejado; una CTA; tope de frecuencia",
+   "kpi": "Conversión por disparo",
+   "uso": "Carrito, navegación, post-compra, reposición, recompra, bienvenida",
+   "cuando_no": "Sin tope: se acumula con los programados",
+   "ejemplo": "Te dejaste tu talla en el carrito",
+   "deck_que": "Se dispara por lo que hace el cliente",
+   "deck_variable": "Carrito, navegación, post-compra, reposición, recompra, bienvenida"
+  },
+  {
+   "tipo": "Contenido",
+   "que": "Utilidad: guías, rutas, cuidado, seguridad",
+   "variables": "Utilidad real; producto como solución, no como protagonista; puente a la ficha",
+   "kpi": "Clics a guía y de guía a producto",
+   "uso": "Perfil B (guías y rutas) y perfil A (capas, seguridad)",
+   "cuando_no": "Para el perfil C en picos de compra",
+   "ejemplo": "5 rutas para el puente, con lo que hay que llevar",
+   "deck_que": "Utilidad: rutas, capas, cuidado",
+   "deck_variable": "El producto como solución, puente a la ficha"
+  }
+ ],
+ "eventos": [
+  "Arranque temporada de invierno · 60 aniversario de la marca (Nuptse)",
+  "11.11 (no se descuenta: se protege el precio antes de Black Friday)",
+  "Pre-Black Friday · acceso anticipado XPLR Pass desde jue 19-nov",
+  "Black Week · promo TNF del mar 24-nov al mar 1-dic · Black Friday vie 27-nov",
+  "Cyber Monday lun 30-nov (la promo TNF acaba el 1-dic) · puente de diciembre (6-8)",
+  "Inmaculada mar 8-dic · primer gran puente de esquí (aperturas previstas el 28-nov)",
+  "Últimos envíos garantizados para Navidad",
+  "Navidad vie 25-dic",
+  "Fin de año · propósitos 2027",
+  "Reyes mié 6-ene · arrancan las rebajas jue 7-ene",
+  "Rebajas de invierno",
+  "Blue Monday lun 18-ene",
+  "Últimos días de rebajas",
+  "Temporada alta de nieve",
+  "Carnaval mar 9-feb · San Valentín dom 14-feb",
+  "Fin de temporada · avance primavera 2027 (senderismo)"
+ ],
+ "calendario": [
+  [
+   1,
+   "A",
+   "Contenido",
+   "Jue",
+   "Antes de la primera nieve: revisa tu equipo técnico (impermeabilización y plumón)",
+   "Clic a guía de mantenimiento",
+   ""
+  ],
+  [
+   1,
+   "B",
+   "Contenido",
+   "Jue",
+   "3 rutas de otoño y qué capa llevar en cada una",
+   "Clic a guía + producto",
+   ""
+  ],
+  [
+   1,
+   "C",
+   "Producto",
+   "Mar",
+   "The North Face cumple 60 y la Nuptse lo celebra: los colores de este invierno",
+   "Clic a ficha",
+   ""
+  ],
+  [
+   2,
+   "A",
+   "Producto",
+   "Mar",
+   "El sistema de capas que llevan nuestros atletas, explicado capa a capa",
+   "Conversión a precio completo",
+   "Asunto técnico vs emocional"
+  ],
+  [
+   2,
+   "B",
+   "Inspiracional",
+   "Jue",
+   "Vuestra primera cumbre del invierno: historias de la comunidad",
+   "Engagement / clic",
+   ""
+  ],
+  [
+   2,
+   "C",
+   "Inspiracional",
+   "Sáb",
+   "60 años de The North Face: la historia de la Nuptse",
+   "Engagement / clic",
+   ""
+  ],
+  [
+   3,
+   "A",
+   "Fidelización",
+   "Mié",
+   "Tu nivel XPLR Pass: así sumas metros con tu equipo técnico",
+   "Altas y logins XPLR Pass",
+   ""
+  ],
+  [
+   3,
+   "B",
+   "Fidelización",
+   "Mié",
+   "Tu acceso anticipado a Black Friday empieza mañana",
+   "Altas y logins XPLR Pass",
+   ""
+  ],
+  [
+   3,
+   "C",
+   "Fidelización",
+   "Mié",
+   "Hazte XPLR Pass y elige color antes de que se agote",
+   "Altas XPLR Pass",
+   ""
+  ],
+  [
+   4,
+   "A",
+   "Oferta",
+   "Vie",
+   "Black Friday: selección técnica (y la garantía, explicada)",
+   "Conversión",
+   ""
+  ],
+  [
+   4,
+   "B",
+   "Oferta",
+   "Mar",
+   "Empieza nuestro Black Friday: tu equipo de invierno completo",
+   "Conversión + cesta de 2 categorías",
+   ""
+  ],
+  [
+   4,
+   "B",
+   "Oferta",
+   "Vie",
+   "Black Friday: hoy (guía de tallas dentro)",
+   "Conversión",
+   ""
+  ],
+  [
+   4,
+   "C",
+   "Oferta",
+   "Mar",
+   "Empieza nuestro Black Friday: tu color, antes de que vuele",
+   "Conversión",
+   ""
+  ],
+  [
+   4,
+   "C",
+   "Oferta",
+   "Vie",
+   "Black Friday: la Nuptse, hoy",
+   "Conversión",
+   "Asunto icono vs precio"
+  ],
+  [
+   5,
+   "A",
+   "Contenido",
+   "Jue",
+   "Esquí de travesía: membranas y gramajes, comparados",
+   "Clic a ficha técnica",
+   ""
+  ],
+  [
+   5,
+   "B",
+   "Oferta",
+   "Lun",
+   "Cyber Monday: la promo acaba mañana (sin quienes ya compraron en Black Friday)",
+   "Conversión",
+   ""
+  ],
+  [
+   5,
+   "B",
+   "Contenido",
+   "Jue",
+   "Tu mochila para el puente, resuelta en 3 capas",
+   "Clic a producto",
+   "Guía (rutas + capas) vs ficha del mismo producto"
+  ],
+  [
+   5,
+   "C",
+   "Oferta",
+   "Lun",
+   "Cyber Monday: la promo acaba mañana",
+   "Conversión",
+   ""
+  ],
+  [
+   6,
+   "A",
+   "Producto",
+   "Mar",
+   "Esquí y freeride FW26: el equipo de la temporada",
+   "Conversión a precio completo",
+   ""
+  ],
+  [
+   6,
+   "B",
+   "Contenido",
+   "Mar",
+   "Guía de regalo para quien sale al monte",
+   "Clic + regalo",
+   ""
+  ],
+  [
+   6,
+   "C",
+   "Producto",
+   "Mar",
+   "Guía de regalo Nuptse",
+   "Conversión regalo",
+   "1ª línea: 'Tu color del 60 aniversario' (quien elige) vs 'Talla segura: cambio de talla gratis' (quien regala)"
+  ],
+  [
+   7,
+   "A",
+   "Fidelización",
+   "Mar",
+   "Tu año en XPLR Pass: beneficios que aún puedes usar",
+   "Canje / recompra",
+   ""
+  ],
+  [
+   7,
+   "B",
+   "Oferta",
+   "Mar",
+   "Último día de envío garantizado para Navidad",
+   "Conversión",
+   ""
+  ],
+  [
+   7,
+   "C",
+   "Oferta",
+   "Mar",
+   "Llega antes de Navidad (versión ganadora de la sem. 6 para quien regala)",
+   "Conversión regalo",
+   ""
+  ],
+  [
+   8,
+   "Todos",
+   "Inspiracional",
+   "Mié",
+   "Never stop exploring: gracias por este año fuera",
+   "Engagement de marca",
+   ""
+  ],
+  [
+   9,
+   "A",
+   "Inspiracional",
+   "Mar",
+   "Tus retos de 2027: 12 cumbres, 12 meses",
+   "Engagement",
+   ""
+  ],
+  [
+   9,
+   "B",
+   "Inspiracional",
+   "Mar",
+   "2027: un fin de semana al mes fuera",
+   "Engagement",
+   ""
+  ],
+  [
+   9,
+   "C",
+   "Contenido",
+   "Mar",
+   "Cómo cuidar tu plumífero para que dure años",
+   "Clic",
+   ""
+  ],
+  [
+   10,
+   "A",
+   "Contenido",
+   "Jue",
+   "Mitad de temporada: mantenimiento de tu membrana y tu plumón",
+   "Clic a guía de cuidado",
+   ""
+  ],
+  [
+   10,
+   "B",
+   "Oferta",
+   "Jue",
+   "Rebajas: lo que te falta para tu ruta, con guía de tallas",
+   "Conversión + cesta",
+   ""
+  ],
+  [
+   10,
+   "C",
+   "Oferta",
+   "Lun",
+   "Últimos días para Reyes (versión ganadora para quien regala)",
+   "Conversión regalo",
+   ""
+  ],
+  [
+   10,
+   "C",
+   "Oferta",
+   "Jue",
+   "Rebajas: tu talla, todavía",
+   "Conversión",
+   ""
+  ],
+  [
+   11,
+   "A",
+   "Contenido",
+   "Mié",
+   "Tu equipo tiene 3 años de garantía: cómo reclamarla",
+   "Confianza / visitas a garantía",
+   ""
+  ],
+  [
+   11,
+   "B",
+   "Oferta",
+   "Mié",
+   "Rebajas: calzado + capa para tu próxima salida",
+   "Conversión + cesta de 2 categorías",
+   ""
+  ],
+  [
+   11,
+   "C",
+   "Producto",
+   "Mié",
+   "Vuelven tallas y colores",
+   "Conversión",
+   ""
+  ],
+  [
+   12,
+   "A",
+   "Inspiracional",
+   "Lun",
+   "Enero en altura: los objetivos de nuestros atletas para 2027",
+   "Engagement",
+   ""
+  ],
+  [
+   12,
+   "B",
+   "Inspiracional",
+   "Lun",
+   "Plan anti Blue Monday: una ruta cerca de ti este sábado",
+   "Engagement",
+   ""
+  ],
+  [
+   12,
+   "C",
+   "Inspiracional",
+   "Lun",
+   "La ciudad también se explora",
+   "Engagement",
+   ""
+  ],
+  [
+   13,
+   "A",
+   "Fidelización",
+   "Mié",
+   "XPLR Pass: tus ventajas de miembro en 2027",
+   "Logins / canje de Store Credits",
+   ""
+  ],
+  [
+   13,
+   "B",
+   "Oferta",
+   "Mié",
+   "Últimos días de rebajas",
+   "Conversión",
+   ""
+  ],
+  [
+   13,
+   "C",
+   "Producto",
+   "Mié",
+   "Vuelve tu color",
+   "Conversión",
+   ""
+  ],
+  [
+   14,
+   "A",
+   "Producto",
+   "Mar",
+   "Lo que llevan nuestros atletas en febrero",
+   "Conversión a precio completo",
+   ""
+  ],
+  [
+   14,
+   "B",
+   "Contenido",
+   "Jue",
+   "Raquetas de nieve: 5 rutas para empezar",
+   "Clic a guía + producto",
+   ""
+  ],
+  [
+   14,
+   "C",
+   "Producto",
+   "Mar",
+   "Novedades de febrero",
+   "Clic a ficha",
+   ""
+  ],
+  [
+   15,
+   "A",
+   "Contenido",
+   "Jue",
+   "Seguridad en travesía invernal: lo que revisan nuestros atletas",
+   "Clic",
+   ""
+  ],
+  [
+   15,
+   "B",
+   "Inspiracional",
+   "Mar",
+   "Una ruta para dos este San Valentín",
+   "Engagement",
+   ""
+  ],
+  [
+   15,
+   "C",
+   "Producto",
+   "Mar",
+   "San Valentín: un regalo para explorar juntos",
+   "Conversión regalo",
+   ""
+  ],
+  [
+   16,
+   "A",
+   "Fidelización",
+   "Mié",
+   "Take-back: lleva tu equipo usado y llévate un 10% (tiendas de Madrid)",
+   "Participación take-back",
+   ""
+  ],
+  [
+   16,
+   "B",
+   "Producto",
+   "Mié",
+   "Avance primavera: nueva colección de senderismo",
+   "Clic a colección",
+   ""
+  ],
+  [
+   16,
+   "C",
+   "Producto",
+   "Mié",
+   "Avance primavera 2027",
+   "Clic a colección",
+   ""
+  ]
+ ],
+ "triggers": [
+  {
+   "nombre": "Bienvenida (asigna perfil por el clic, no preguntando)",
+   "perfiles": "Nuevos",
+   "tasa": 0.0,
+   "emails": 3,
+   "plantillas": 1
+  },
+  {
+   "nombre": "Carrito abandonado",
+   "perfiles": "A,B,C",
+   "tasa": 0.08,
+   "emails": 2,
+   "plantillas": 3,
+   "tope": true
+  },
+  {
+   "nombre": "Navegación sin compra",
+   "perfiles": "A,B,C",
+   "tasa": 0.15,
+   "emails": 1,
+   "plantillas": 3
+  },
+  {
+   "nombre": "Post-compra: talla, cuidado e invitación XPLR Pass",
+   "perfiles": "A,B,C",
+   "tasa": 0.12,
+   "emails": 1,
+   "plantillas": 3
+  },
+  {
+   "nombre": "Aviso de reposición (talla o color)",
+   "perfiles": "C",
+   "tasa": 0.06,
+   "emails": 1,
+   "plantillas": 1
+  },
+  {
+   "nombre": "Recompra de temporada / complemento de cesta",
+   "perfiles": "A,B",
+   "tasa": 0.1,
+   "emails": 1,
+   "plantillas": 2
+  }
+ ],
+ "textos": {
+  "fuente_supuestos": "No tenemos el CRM de The North Face",
+  "nota_reparto": "Los porcentajes son SUPUESTOS para poder calcular, no se derivan de la estrategia de VF (que habla de dónde quiere crecer la marca, no de cómo es hoy su base). 'Sin perfil' = suscriptores sin compra o sin ninguna familia por encima del 50% del gasto: reciben el programa del excursionista (el más general) y la bienvenida les asigna perfil por clic. Con el CRM se sustituye por la cuenta real.",
+  "tipos_intro": "Las definiciones siguen la clase. 'Cuándo NO' es tan importante como 'cuándo': el error caro es mandar oferta a quien compra a precio completo (perfil A) o ficha técnica a quien compra el icono (perfil C).",
+  "reglas_calendario": "Un email programado por perfil y semana como norma; dos en picos (Black Week, Cyber Monday, Reyes). 'Todos' = una sola pieza para los tres perfiles. El tipo de email y el atributo cambian según el perfil (prueba del mensaje único). Reglas: tope de 2 programados por semana y perfil (3 en Black Week contando triggers); quien compra en Black Friday sale del Cyber Monday; el control del 10% no recibe ninguno de los programados (sí triggers y transaccionales). Tests A/B: la variante ganadora de la sem. 6 (perfil C) es la que se envía en la sem. 7 y el lunes de la sem. 10 a quien compra como regalo.",
+  "lectura_matriz": "Lectura: el alpinista (A) recibe 1 sola oferta (Black Friday) en 16 semanas porque compra a precio completo; el excursionista (B) concentra ofertas en Black Week y rebajas y recibe más contenido (guías); el urbanita (C), producto y oferta de regalo. Los triggers se suman aparte (hoja Impactos).",
+  "variable_discrimina": "familia de producto con más del 50% del gasto en 24 meses",
+  "resumen_contenidos": "6 tipos de email con uso distinto por perfil: A rendimiento técnico (casi sin oferta), B utilidad y guías (oferta en picos), C icono y regalo (dos discursos en Navidad).",
+  "resumen_eventos": "Black Friday, Cyber Monday, puentes, Navidad, Reyes, rebajas, Blue Monday, Carnaval y San Valentín",
+  "resumen_medicion": "Control del 10% apartado antes de segmentar; venta incremental por escenarios; corte provisional 15-ene-2027 y revisión completa 1-mar-2027."
+ },
+ "medicion": [
+  [
+   "Control",
+   "10% de la base, apartado ANTES de segmentar y estratificado por perfil; no recibe el programa (sí transaccionales y triggers)."
+  ],
+  [
+   "Qué se compara",
+   "Conversión y venta por cliente: grupo que recibe vs control, por perfil. Venta incremental por escenarios, nunca restando columnas."
+  ],
+  [
+   "Tests A/B",
+   "Mitades 50/50 (pregunta '¿cuál gana?'): asunto técnico vs emocional (A, sem. 2), icono vs precio (C, sem. 4), guía vs ficha (B, sem. 5), quien elige vs quien regala (C, sem. 6; la ganadora sale en la sem. 7 y el lunes de la sem. 10)."
+  ],
+  [
+   "Refutación de perfiles",
+   "Corte provisional el 15-ene-2027 (solo los tests de las sem. 2, 5 y 6) y revisión completa el 1-mar-2027, con las condiciones de refutación del documento de buyer personas. La refutación de A (precio completo vs descuento) se mide en el grupo de control, que compra sin que le empujemos."
+  ],
+  [
+   "Qué no usar",
+   "Tasa de apertura como KPI principal (Apple Mail Privacy Protection la infla desde 2021)."
+  ]
+ ],
+ "deck": {
+  "estilo": {
+   "oscuro": "141414",
+   "oscuro2": "232323",
+   "papel": "F5F3EE",
+   "acento": "D52B1E",
+   "fuente_titulo": "Bahnschrift SemiBold Condensed",
+   "fuente_texto": "Bahnschrift",
+   "tipos": {
+    "Oferta": "D52B1E",
+    "Producto": "E8B931",
+    "Inspiracional": "9DBEE3",
+    "Contenido": "4F7299",
+    "Fidelización": "2F6B4F"
+   }
+  },
+  "pie": "THE NORTH FACE · PLAN DE EMAIL · TRABAJO DE ANÁLISIS DEL GRUPO",
+  "portada": {
+   "titulo": "UN MISMO PLUMÍFERO,\nTRES COMPRADORES",
+   "subtitulo": "Plan de email marketing para The North Face España · 16 semanas, del 2-nov-2026 al 21-feb-2027",
+   "autores": "Carlos García-Arisco Vílchez y equipo"
+  },
+  "personas_titulo": "Tres exploradores, tres razones para comprar",
+  "personas_pie": "Variable que discrimina: la familia de producto con más del 50 % del gasto en 24 meses (un SKU, una familia). El 20 % sin perfil recibe el programa de B.",
+  "tipos_lectura": "emails programados de cada tipo en 16 semanas. El alpinista recibe 1 oferta y sobre todo contenido técnico; el excursionista, ofertas en los picos y guías; el urbanita, producto y regalo.",
+  "meses": [
+   "60 aniversario · XPLR 19-nov · Black Friday TNF 24-nov → 1-dic",
+   "Cyber Monday 30-nov · puente · guía de regalo · Navidad",
+   "Reyes · rebajas 7-ene · Blue Monday 18-ene",
+   "Temporada de nieve · Carnaval · San Valentín · avance primavera"
+  ],
+  "momentos_titulo": "Donde se gana o se pierde la temporada",
+  "momentos": [
+   {
+    "tag": "SEM 3-5 · 19-NOV → 1-DIC",
+    "titulo": "BLACK FRIDAY DE THE NORTH FACE",
+    "puntos": [
+     "Acceso anticipado XPLR Pass el 19-nov: email de fidelización la víspera.",
+     "Promo del 24-nov al 1-dic (no solo el viernes): 2 ofertas a B y C, 1 al alpinista.",
+     "Cyber Monday: «la promo acaba mañana», sin quien ya compró."
+    ]
+   },
+   {
+    "tag": "SEM 6-10 · 8-DIC → 6-ENE",
+    "titulo": "NAVIDAD: DOS DISCURSOS, UN PRODUCTO",
+    "puntos": [
+     "En el urbanita decide quien lo lleva y paga quien lo regala.",
+     "Sem. 6, test 50/50 solo en la primera línea: «Tu color del 60 aniversario» vs «Talla segura: cambio de talla gratis».",
+     "La versión ganadora sale en la sem. 7 y en Reyes."
+    ]
+   },
+   {
+    "tag": "SEM 10-13 · 7-ENE → 31-ENE",
+    "titulo": "REBAJAS Y BLUE MONDAY",
+    "puntos": [
+     "Excursionista: completar la cesta (calzado + capa), con guía de tallas.",
+     "Alpinista: sin descuento; contenido sobre la garantía de 3 años.",
+     "Urbanita: «vuelve tu color», no últimas tallas."
+    ]
+   }
+  ],
+  "momentos_pie": "Datos verificados en thenorthface.com/es-es el 17-nov-2026: fechas de la promo, acceso XPLR Pass, devolución y cambio de talla gratis en 30 días, garantía.",
+  "numeros_lectura": "Poco más de 1 por semana: sin fatiga",
+  "medicion_titulo": "Cada perfil es una hipótesis, y se puede caer",
+  "tests_texto": "Sem. 2: asunto técnico vs emocional (A) · Sem. 4: icono vs precio (C) · Sem. 5: guía vs ficha (B) · Sem. 6: quien elige vs quien regala (C).",
+  "revision": {
+   "fecha": "1-MAR",
+   "texto": "Corte provisional el 15-ene con los tests. Cada perfil tiene escrita su condición de refutación: si el alpinista compra más con descuento que a precio completo, el perfil se cae."
+  },
+  "cierre": "Lo esperable es que alguna hipótesis se caiga. Si funcionan las tres, hay que sospechar de cómo se midió."
+ },
+ "notas": [
+  "[Ponente 1] (30 s) Elegimos The North Face porque es una marca con un problema muy claro para el email: vende el mismo plumífero a alguien que sube a una cumbre y a alguien que lo lleva por la ciudad. Si les mandamos la misma newsletter, a uno de los dos le estamos hablando mal. Todo el trabajo sale de esa idea: primero quién compra, luego qué le contamos, cuándo, cuánto y cómo sabremos si ha funcionado.",
+  "[Ponente 1] (1 min 15 s) Los tres perfiles no los hemos inventado: siguen la segmentación que usa la propia marca en sus presentaciones a inversores. VF Corp habla del Progressive Explorer y lo divide en montaña, outdoor activo y exploración urbana. Lo que hemos añadido es lo que pide el método de clase: cada perfil se separa por lo que compra, no por la edad, y empieza por su barrera, antes que por el beneficio. Al alpinista no le convence que digamos que somos los mejores; le convence saber que, si falla, está cubierto: la garantía en España es de tres años. Al excursionista le frena equivocarse de talla, así que todas sus piezas llevan la guía de tallas y el cambio gratis. Y en el urbanita aparece algo importante: en Navidad quien decide no es quien paga. Los porcentajes son supuestos, porque no tenemos el CRM de la marca; están en el Excel y se cambian en una celda.",
+  "[Ponente 2] (1 min 15 s) Para la primera pregunta usamos los seis tipos de email de clase. La tabla dice cuántos recibe cada perfil en las dieciséis semanas, y lo importante es dónde están los números grandes. El alpinista recibe una sola oferta en cuatro meses: compra a precio completo, y mandarle descuentos le enseña a esperarlos. Su tipo principal es el contenido técnico. El excursionista es el que más ofertas recibe, pero concentradas en Black Friday y rebajas, y entre medias guías de rutas, porque lo que le mueve es la utilidad. El urbanita es sobre todo producto, con el sesenta aniversario de la marca y la Nuptse como hilo, más las ofertas de regalo. Los triggers no van en la tabla porque no se programan: saltan cuando el cliente deja un carrito, mira un producto o compra.",
+  "[Ponente 2] (1 min 15 s) Esta es la rueda de contenidos: cada sector es una semana, empezando arriba el 2 de noviembre, y cada anillo un perfil. El color es el tipo de email. Con un vistazo se ve el ritmo: noviembre arranca con producto y contenido, el rojo se concentra en Black Week y en rebajas, y diciembre y enero tienen más inspiracional y fidelización. Hay una sola semana en la que los tres anillos son iguales: Navidad, con un único email de marca para todos. La norma es un email por perfil y semana; solo en los picos hay dos. Así cada persona recibe poco más de uno a la semana, que es lo que evita las bajas en la temporada en la que todas las marcas saturan la bandeja.",
+  "[Ponente 2] (1 min 30 s) Tres momentos deciden el plan. El primero es Black Friday, y aquí revisamos la web de la marca: The North Face no hace solo el viernes, su promoción va del 24 de noviembre al 1 de diciembre, con acceso anticipado para los socios del XPLR Pass desde el 19. Por eso el email de Cyber Monday dice que la promo acaba mañana y no que es el último día, que habría sido falso. El segundo es Navidad: probamos dos primeras líneas para el mismo producto, una para quien elige el color y otra para quien regala y quiere acertar con la talla, y la que gane es la que mandamos la semana siguiente y en Reyes. El tercero son las rebajas: al alpinista no le mandamos descuentos ni ahí, le hablamos de la garantía.",
+  "[Ponente 3] (1 min 15 s) Las preguntas tres y cuatro son números, y salen todos del Excel con fórmulas. Un impacto es un email entregado a una persona. Sobre una base supuesta de cien mil suscriptores, y quitando el diez por ciento de control, el programa genera 1,66 millones de impactos; los triggers son una parte pequeña porque solo llegan a quien hace algo. Cada persona recibe entre dieciséis y diecinueve emails en dieciséis semanas. Para producirlo hacen falta 67 piezas: cada email programado es una pieza, las variantes de los tests suman una más, el email común de Navidad cuenta una sola vez y cada trigger cuenta sus plantillas, no sus envíos. Si la base real fuera distinta, se cambia la celda y todo se recalcula.",
+  "[Ponente 3] (1 min) Cerramos con lo que más nos importa: cómo sabremos si esto funciona. En Navidad y en rebajas se vende mucho de todos modos, así que sin un grupo que no reciba nada nos apuntaríamos ventas que iban a llegar igual. Por eso apartamos un diez por ciento antes de segmentar. Los cuatro tests están pensados para refutar a cada perfil, no para confirmarlo, y la revisión del 1 de marzo tiene escrito qué resultado tumbaría cada uno. Si alguno se cae, habremos aprendido algo de los clientes de la marca. Gracias."
+ ]
+}

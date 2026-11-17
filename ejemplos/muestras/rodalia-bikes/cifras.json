@@ -1,0 +1,184 @@
+{
+ "marca": "Rodalia Bikes",
+ "semanas": 10,
+ "emails_programados": 36,
+ "perfiles": [
+  {
+   "k": "C",
+   "nombre": "Ciclista de carretera exigente",
+   "pct": 0.15,
+   "programa_de": "C",
+   "audiencia": 6000.0,
+   "recibe": 5400,
+   "programados": 10,
+   "picos": 0,
+   "imp_programados": 54000,
+   "imp_triggers": 1860.0,
+   "imp_total": 55860.0,
+   "emails_por_persona": 10.31
+  },
+  {
+   "k": "U",
+   "nombre": "Commuter urbano",
+   "pct": 0.3,
+   "programa_de": "U",
+   "audiencia": 12000.0,
+   "recibe": 10800,
+   "programados": 10,
+   "picos": 0,
+   "imp_programados": 108000,
+   "imp_triggers": 3720.0,
+   "imp_total": 111720.0,
+   "emails_por_persona": 10.31
+  },
+  {
+   "k": "F",
+   "nombre": "Familia que sale el domingo",
+   "pct": 0.25,
+   "programa_de": "F",
+   "audiencia": 10000.0,
+   "recibe": 9000,
+   "programados": 11,
+   "picos": 1,
+   "imp_programados": 99000,
+   "imp_triggers": 2720.0,
+   "imp_total": 101720.0,
+   "emails_por_persona": 11.272
+  },
+  {
+   "k": "R",
+   "nombre": "Regalador de Día de la Madre",
+   "pct": 0.1,
+   "programa_de": "R",
+   "audiencia": 4000.0,
+   "recibe": 3600,
+   "programados": 8,
+   "picos": 2,
+   "imp_programados": 28800,
+   "imp_triggers": 1576.0,
+   "imp_total": 30376.0,
+   "emails_por_persona": 8.394
+  },
+  {
+   "k": "S",
+   "nombre": "Sin perfil (sin compra o sin familia clara)",
+   "pct": 0.2,
+   "programa_de": "U",
+   "audiencia": 8000.0,
+   "recibe": 7200,
+   "programados": 10,
+   "picos": 0,
+   "imp_programados": 72000,
+   "imp_triggers": 2480.0,
+   "imp_total": 74480.0,
+   "emails_por_persona": 10.31
+  }
+ ],
+ "bienvenida": {
+  "altas": 1600,
+  "emails": 2,
+  "impactos": 3200
+ },
+ "impactos": {
+  "programados": 361800,
+  "triggers": 15556.0,
+  "total": 377356.0
+ },
+ "piezas": {
+  "unicos": 35,
+  "variantes": 4,
+  "comunes": 1,
+  "plantillas": 9,
+  "total": 49
+ },
+ "tests": [
+  [
+   1,
+   "C",
+   "1ª línea: «Recién llegado, temporada 2027» vs «Ficha técnica completa frente al modelo anterior»"
+  ],
+  [
+   3,
+   "F",
+   "1ª línea: «Que le valga también el año que viene» vs «Lista para estrenar en Semana Santa»"
+  ],
+  [
+   5,
+   "U",
+   "1ª línea: «Una hora más de luz para volver en bici» vs «Llega al trabajo sin sudar»"
+  ],
+  [
+   8,
+   "R",
+   "1ª línea: «Acierta aunque no sepas su talla» (quien paga) vs «Para que salga contigo los domingos» (quien la usa)"
+  ]
+ ],
+ "meses": [
+  [
+   "MAR · sem 1-4",
+   1,
+   4
+  ],
+  [
+   "ABR · sem 5-9",
+   5,
+   9
+  ],
+  [
+   "MAY · sem 10",
+   10,
+   10
+  ]
+ ],
+ "por_tipo": {
+  "C": {
+   "Oferta": 0,
+   "Inspiracional": 2,
+   "Producto": 3,
+   "Fidelización": 2,
+   "Contenido": 3
+  },
+  "U": {
+   "Oferta": 1,
+   "Inspiracional": 2,
+   "Producto": 2,
+   "Fidelización": 1,
+   "Contenido": 4
+  },
+  "F": {
+   "Oferta": 2,
+   "Inspiracional": 2,
+   "Producto": 2,
+   "Fidelización": 1,
+   "Contenido": 4
+  },
+  "R": {
+   "Oferta": 1,
+   "Inspiracional": 2,
+   "Producto": 3,
+   "Fidelización": 0,
+   "Contenido": 2
+  }
+ },
+ "celdas": {
+  "impactos_total": "Impactos!F11",
+  "impactos_programados": "Impactos!D11",
+  "piezas_total": "Piezas!F9",
+  "piezas_check": "Piezas!F18",
+  "suma_pct": "Supuestos!C13",
+  "programados_C": "Matriz_Semanal!D15",
+  "programados_U": "Matriz_Semanal!E15",
+  "programados_F": "Matriz_Semanal!F15",
+  "programados_R": "Matriz_Semanal!G15",
+  "imp_total_C": "Impactos!F5",
+  "imp_total_U": "Impactos!F6",
+  "imp_total_F": "Impactos!F7",
+  "imp_total_R": "Impactos!F8",
+  "imp_total_S": "Impactos!F9",
+  "emails_pp_C": "Impactos!B14",
+  "emails_pp_U": "Impactos!B15",
+  "emails_pp_F": "Impactos!B16",
+  "emails_pp_R": "Impactos!B17",
+  "emails_pp_S": "Impactos!B18"
+ }
+}
