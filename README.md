@@ -30,7 +30,7 @@ Resultado: 50 emails, 1.661.240 impactos y 67 piezas.
 - Las personas siguen la segmentación pública de VF Corp: Mountain Sports, Outdoor Active y Urban Exploration.
 - Las fechas de la promoción, el programa XPLR Pass, la garantía y las devoluciones se verificaron en la web de la marca el 17-nov-2026.
 - **La base de suscriptores y el reparto entre perfiles son supuestos**, porque no tenemos el CRM de la marca. Están marcados como tales y se sustituyen con `importar.py`.
-- Es un análisis académico con datos públicos. No hay relación con la marca ni se usa su logo.
+- Es un análisis académico con datos públicos. El deck que genera esta plantilla (el de arriba) no usa el logo de la marca; la entrega final de clase, con diseño visual de un compañero de equipo sobre esta base, sí lo lleva, y puede verse en el [caso del portfolio](https://carlosarisco55-max.github.io/casos/plan-email-north-face/).
 
 Entrega completa: [deck en PDF](ejemplos/muestras/north-face/TNF-plan-email.pdf) · [Excel](ejemplos/muestras/north-face/plan_email_TNF.xlsx) · [defensa](ejemplos/muestras/north-face/defensa_TNF.pdf) · [guion](ejemplos/muestras/north-face/guion_TNF.pdf).
 
