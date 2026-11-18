@@ -30,9 +30,11 @@ Resultado: 50 emails, 1.661.240 impactos y 67 piezas.
 - Las personas siguen la segmentación pública de VF Corp: Mountain Sports, Outdoor Active y Urban Exploration.
 - Las fechas de la promoción, el programa XPLR Pass, la garantía y las devoluciones se verificaron en la web de la marca el 17-nov-2026.
 - **La base de suscriptores y el reparto entre perfiles son supuestos**, porque no tenemos el CRM de la marca. Están marcados como tales y se sustituyen con `importar.py`.
-- Es un análisis académico con datos públicos. El deck que genera esta plantilla (el de arriba) no usa el logo de la marca; la entrega final de clase, con diseño visual de un compañero de equipo sobre esta base, sí lo lleva, y puede verse en el [caso del portfolio](https://carlosarisco55-max.github.io/casos/plan-email-north-face/).
+- Es un análisis académico con datos públicos. El deck que genera esta plantilla (el de arriba) no usa el logo de la marca; la entrega final de clase sí lo lleva (ver abajo), y puede verse también en el [caso del portfolio](https://carlosarisco55-max.github.io/casos/plan-email-north-face/).
 
-Entrega completa: [deck en PDF](ejemplos/muestras/north-face/TNF-plan-email.pdf) · [Excel](ejemplos/muestras/north-face/plan_email_TNF.xlsx) · [defensa](ejemplos/muestras/north-face/defensa_TNF.pdf) · [guion](ejemplos/muestras/north-face/guion_TNF.pdf).
+Entrega generada por la plantilla: [deck en PDF](ejemplos/muestras/north-face/TNF-plan-email.pdf) · [Excel](ejemplos/muestras/north-face/plan_email_TNF.xlsx) · [defensa](ejemplos/muestras/north-face/defensa_TNF.pdf) · [guion](ejemplos/muestras/north-face/guion_TNF.pdf).
+
+**Entrega final de clase** (diseño visual de Andrés Alvarado sobre esta base, con fotografía y logo de la marca): [TNF-diseno-final-equipo.pdf](ejemplos/muestras/north-face/TNF-diseno-final-equipo.pdf).
 
 Además hay dos marcas ficticias que prueban que la plantilla se adapta:
 
@@ -64,9 +66,11 @@ python motor/importar.py marca.json clientes.xlsx --hoja Clientes --perfil Segme
 python motor/importar.py marca.json ventas.csv --cliente ID --familia Familia --importe Importe --fecha Fecha
 ```
 
+Pensado para un export tal cual, no para una tabla ya limpiada a mano: `--saltar N` se salta N filas de título por encima de la cabecera, los nombres de familia y de segmento no distinguen mayúsculas ni espacios sueltos, el opt-in admite texto, número o casilla de verificación, y una fila con cliente sin id, importe o fecha ilegibles se descarta con un aviso en vez de tumbar todo el import. Lo único que no deshace solo son las celdas combinadas.
+
 ## Cómo se sabe que funciona
 
-`python motor/test_motor.py` comprueba cuatro cosas:
+`python motor/test_motor.py` comprueba cinco cosas:
 1. **El caso real se reproduce.** The North Face da exactamente las cifras que se presentaron.
 2. **El Excel y el cálculo en Python coinciden.** Para cada ejemplo, y también con datos importados, el Excel recalculado por LibreOffice da lo mismo que el cálculo en Python, celda a celda.
 3. **La validación bloquea los errores que se corrigieron a mano en el caso real:**
@@ -77,6 +81,7 @@ python motor/importar.py marca.json ventas.csv --cliente ID --familia Familia --
 
    Además avisa de los titulares que nunca se envían.
 4. **El importador cuenta bien** las dos formas de tabla: filtro de opt-in, ventana de 24 meses, importes con coma decimal y familias sin perfil.
+5. **El importador aguanta un Excel real y sucio**: fila de título, cliente sin id, importe y fecha rotos, familia con mayúsculas y espacios de más, y opt-in como número o casilla en vez de texto. Ninguna fila mala tumba el import; cada una cuenta en un aviso.
 
 ## Estructura
 

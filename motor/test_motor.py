@@ -126,6 +126,51 @@ def test_importar_clientes():
         assert m["datos_reales"]["antes"]["pct"]["R"] == 0.55 and m["datos_reales"]["conteo"]["S"] == 10 - 5
 
 
+def test_importar_datos_sucios():
+    """Un Excel real: fila de título, mayúsculas/espacios en la familia, cliente sin id, importe y fecha
+    rotos, y opt-in como bool/número en vez de texto. Ninguna fila mala debe tumbar el import entero."""
+    import io
+    from contextlib import redirect_stdout
+    from datetime import date
+    from openpyxl import Workbook
+
+    with tempfile.TemporaryDirectory() as tmp:
+        tmp = Path(tmp)
+        m = cargar("north-face.json")
+        m["familias"] = {"Mountain": "A", "Outdoor": "B", "Urban": "C"}
+        (tmp / "marca.json").write_text(json.dumps(m, ensure_ascii=False), encoding="utf-8")
+        wb = Workbook()
+        ws = wb.active
+        ws.append(["Export interno de ventas — no editar a mano"])
+        ws.append(["Cliente", "Familia", "Importe", "Fecha", "Optin"])
+        for row in [
+            ["c1", " mountain ", 300.0, date(2026, 10, 1), True],   # A: familia con espacios y minúsculas
+            ["c1", "URBAN", 50, date(2026, 10, 2), True],           # mismo cliente, sigue siendo A (300/350 > 50 %)
+            [None, "Mountain", 999, date(2026, 10, 1), True],       # sin cliente: no se puede agregar, se descarta
+            ["c2", "Outdoor", "no es un número", date(2026, 9, 1), 1.0],  # importe roto: se descarta la fila
+            ["c3", "Outdoor", 500, "fecha-rara", 1],                # fecha rota: se descarta la fila
+            ["c4", "Outdoor", 1200.5, date(2026, 7, 1), 1],         # B: opt-in como entero 1, no como texto
+            ["c5", "Calcetines", 20, date(2026, 6, 1), True],       # familia sin perfil -> sin perfil
+            ["c6", "Mountain", 80, date(2024, 1, 1), True],         # fuera de los 24 meses
+            ["c7", "Outdoor", 500, date(2026, 8, 1), False],        # no acepta email (bool False): se excluye
+        ]:
+            ws.append(row)
+        xlsx = tmp / "ventas.xlsx"
+        wb.save(xlsx)
+        salida = io.StringIO()
+        with redirect_stdout(salida):
+            m = importar.main([str(tmp / "marca.json"), str(xlsx), "--saltar", "1", "--cliente", "Cliente",
+                               "--familia", "Familia", "--importe", "Importe", "--fecha", "Fecha", "--meses", "24",
+                               "--suscrito", "Optin"])
+        log = salida.getvalue()
+        assert m["datos_reales"]["conteo"] == {"A": 1, "B": 1, "C": 0, "S": 1}, m["datos_reales"]["conteo"]
+        assert "1 fila(s) sin identificador de cliente" in log
+        assert "1 fila(s) con un importe no numérico" in log
+        assert "1 fila(s) con fecha no reconocible" in log
+        assert g.validar(m)[0] == []
+        comparar(m, "north-face con un Excel real y sucio")
+
+
 def test_importar_transacciones():
     with tempfile.TemporaryDirectory() as tmp:
         tmp = Path(tmp)

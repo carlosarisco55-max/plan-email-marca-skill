@@ -47,7 +47,7 @@ Ejemplos generados, para ver cómo queda: `ejemplos/muestras/` (The North Face, 
 
    Si la barrera del perfil prohíbe descuentos, ponle `max_ofertas` en el JSON.
 
-   **Si la marca da sus números** (un Excel o CSV de clientes, segmentos o ventas), usa `importar.py` en lugar de suponer la base y el reparto. Mira las dos formas de tabla en `python M/importar.py -h`. El motor guarda el supuesto anterior, y el Excel muestra los dos en la hoja `Datos_reales`. La diferencia entre lo que suponíamos y el dato es un hallazgo: cuéntalo en la defensa.
+   **Si la marca da sus números** (un Excel o CSV de clientes, segmentos o ventas), usa `importar.py` en lugar de suponer la base y el reparto. Mira las dos formas de tabla en `python M/importar.py -h`. El motor guarda el supuesto anterior, y el Excel muestra los dos en la hoja `Datos_reales`. La diferencia entre lo que suponíamos y el dato es un hallazgo: cuéntalo en la defensa. Un export real casi nunca viene limpio: `--saltar N` salta filas de título por encima de la cabecera, y una fila con cliente sin id, importe o fecha rotos se descarta con un AVISO en vez de tumbar todo el import. Lo que no arregla solo: celdas combinadas (una familia repartida por varias filas) hay que deshacerlas en el Excel antes de importar.
 4. **Calendario en `marca.json`.** Copia `ejemplos/lumen-cafe.json`. El formato está en `references/formato-marca-json.md`. Las reglas:
    - Por norma, 1 email por perfil y semana. Los 2 de los picos son solo para los perfiles que compran en ese pico. Un perfil fuera de su temporada puede quedarse sin email (es un AVISO que se justifica).
    - `Todos` solo para un mensaje de marca.
